@@ -1,8 +1,8 @@
 def call (String ImageName, String ImageTag, String Directory) {
-    withCredentials (usernamePassword[
+    withCredentials ([usernamePassword(
         credentialsId:"Docker",
         passwordVariable: "DockerPass",
-        usernameVariable: "DockerUser"]) {
+        usernameVariable: "DockerUser")]) {
             echo "Checking Inn Docker Login.. "
             sh " docker login -u ${DockerUser} -p ${DockerPass}"
 
