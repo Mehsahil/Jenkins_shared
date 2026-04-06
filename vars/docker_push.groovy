@@ -1,5 +1,5 @@
 def call (String ImageName, String ImageTag, String Directory) {
-    withCredentials ([usernamePassword(
+    withCredentials([usernamePassword(
         credentialsId:"Docker",
         passwordVariable: "DockerPass",
         usernameVariable: "DockerUser")]) {
