@@ -9,5 +9,5 @@ def call (String ImageName, String ImageTag, String Directory) {
             echo " Build image is now being pushed to DockerHub"
             sh "docker push ${DockerUser}/${ImageName}:${ImageTag}"
         }
-        echo "Docker image has been pushed for Directory '${Directory}'"
+        echo "Docker image has been pushed for directory : '${Directory}'"
 }
