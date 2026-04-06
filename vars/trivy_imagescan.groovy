@@ -3,6 +3,6 @@ def call (String ImageName, String ImageTag, String Directory) {
         credentialsId:"Docker",
         passwordVariable: "DockerPass",
         usernameVariable : "DockerUser")]) {
-            sh "trivy image ${DockerUser}/${ImageName}:${ImageTag} > trivy-${Directory}-image.txt 2>&1"
+            sh "trivy image ${DockerUser}/${ImageName}:${ImageTag} --severity CRITICAL,HIGH > trivy-${Directory}-image.txt 2>&1"
         }
 }
