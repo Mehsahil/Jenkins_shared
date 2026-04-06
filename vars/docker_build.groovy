@@ -4,7 +4,7 @@ def call (String ImageName, String ImageTag, String Directory) {
         usernameVariable :"DockerUser")]) {
             
            echo " Initiating docker build for ${Directory}"
-           sh "docker build -t ${DockerUser}/${ImageName}:${ImageTag}"  
+           sh "docker build -t ${DockerUser}/${ImageName}:${ImageTag} ."  
     }
     echo "Build completed for image of ${Directory}"
 }
