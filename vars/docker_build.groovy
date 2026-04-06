@@ -1,8 +1,8 @@
 def call (String ImageName, String ImageTag, String Directory) {
     withCredentials([usernamePassword(
-        credentialsId :"Docker",
-        passwordVariable : "DockerPass",
-        usernameVariable : "DockerUser")]) {
+        credentialsId:"Docker",
+        passwordVariable: "DockerPass",
+        usernameVariable: "DockerUser")]) {
            echo " Initiating docker build for ${Directory}"
            sh "docker build -t ${DockerUser}/${ImageName}:${ImageTag} ."  
     }
