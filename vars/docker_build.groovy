@@ -1,5 +1,10 @@
-def call (String DockerHubName, String ImageName, String ImageName, String Directory) {
-    echo " Initiating docker build for ${Directory}"
-    sh "docker build -t ${DockerHubName}/${ImageName}:${ImageName}"
+def call (String ImageName, String ImageTag, String Directory) {
+    withCredentials([usernamePassword(
+        credentialsId : "Docker",
+        usernameVariable :"DockerUser")]) {
+            
+           echo " Initiating docker build for ${Directory}"
+           sh "docker build -t ${DockerUser}/${ImageName}:${ImageTag}"  
+    }
     echo "Build completed for image of ${Directory}"
 }
